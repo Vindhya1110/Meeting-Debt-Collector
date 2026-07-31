@@ -26,6 +26,7 @@ from notion_reporter import (
     create_commitment_page, update_commitment_status, upsert_person_page,
     create_pattern_report_page
 )
+from calendar_agent import confirm_event, propose_and_ask_slack
 
 app = FastAPI(title="Meeting Debt Collector Agent")
 
@@ -57,6 +58,9 @@ class ActionReq(BaseModel):
 class PreBriefReq(BaseModel):
     attendees: List[str]
     context_notes: str = ""
+
+class CalendarConfirmReq(BaseModel):
+    attendee_emails: List[str] = []
 
 # ── Startup ────────────────────────────────────────────────────────────────────
 
@@ -306,6 +310,26 @@ async def commitment_action(cid: str, req: ActionReq):
         dict(updated)["status"], detail=f"Action: {req.action}"
     )
     return {"ok": True}
+
+@app.post("/calendar/{draft_id}/confirm")
+async def confirm_calendar_event(draft_id: str, req: CalendarConfirmReq):
+    """
+    Human-triggered. Called after Slack approval.
+    Creates the actual Google Calendar event.
+    Never call this programmatically from the agent logic itself.
+    """
+    result = confirm_event(draft_id, req.attendee_emails)
+    if not result["ok"]:
+        raise HTTPException(400, result.get("error", "Failed"))
+    return result
+
+@app.get("/calendar/{draft_id}/confirm")
+async def confirm_calendar_event_get(draft_id: str):
+    """Browser-friendly confirm (GET request from Slack link)."""
+    result = confirm_event(draft_id, [])
+    if not result["ok"]:
+        return {"error": result.get("error")}
+    return result
 
 @app.post("/simulate")
 async def simulate(advance_hours: float = 24.0):

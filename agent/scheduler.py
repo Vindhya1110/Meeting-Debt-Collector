@@ -66,6 +66,8 @@ def tick():
             log_event(c["id"], "escalated")
             from nudger import send_escalation
             send_escalation(c)
+            from calendar_agent import propose_and_ask_slack
+            propose_and_ask_slack(c)
 
         elif h_until < 0 and c["status"] in ("open", "nudged", "escalated"):
             if not _claim(c["id"], c["status"], "missed"):
@@ -74,6 +76,8 @@ def tick():
             _bump(c["owner"], "missed")
             cascade(c["id"], abs(h_until), c.get("normalized_task", "?"))
             _check_reassignment(c)
+            from calendar_agent import propose_and_ask_slack
+            propose_and_ask_slack(c)
 
 def cascade(commitment_id: str, delay_h: float, upstream_task: str):
     """Propagate deadline slip to all downstream dependents recursively."""

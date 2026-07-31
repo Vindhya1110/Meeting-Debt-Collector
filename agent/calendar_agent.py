@@ -275,41 +275,10 @@ def confirm_event(draft_id: str, attendee_emails: list) -> dict:
     }
 
 
-# ── /calendar/{id}/confirm route — add this to agent/main.py ─────────────────
-# ADD these two routes to main.py (they may already exist — if so, REPLACE them)
-
-"""
-ADD TO main.py:
-
-from calendar_agent import confirm_event, propose_and_ask_slack
-
-class CalendarConfirmReq(BaseModel):
-    attendee_emails: List[str] = []
-
-@app.post("/calendar/{draft_id}/confirm")
-async def confirm_calendar_event(draft_id: str, req: CalendarConfirmReq):
-    '''
-    Human-triggered. Called after Slack approval.
-    Creates the actual Google Calendar event.
-    Never call this programmatically from the agent logic itself.
-    '''
-    result = confirm_event(draft_id, req.attendee_emails)
-    if not result["ok"]:
-        raise HTTPException(400, result.get("error", "Failed"))
-    return result
-
-
-@app.get("/calendar/{draft_id}/confirm")
-async def confirm_calendar_event_get(draft_id: str):
-    '''
-    Browser-friendly confirm (GET request from Slack link).
-    Uses empty attendee_emails — human can add via the curl command.
-    '''
-    result = confirm_event(draft_id, [])
-    if not result["ok"]:
-        return {"error": result.get("error")}
-    return result
-"""
+# ── /calendar/{id}/confirm routes ─────────────────────────────────────────────
+# Registered in agent/main.py: POST/GET /calendar/{draft_id}/confirm,
+# calling confirm_event() below. Kept out of this file so calendar_agent.py
+# has no dependency on FastAPI/the app object.
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
