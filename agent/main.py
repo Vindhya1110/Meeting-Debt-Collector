@@ -109,8 +109,8 @@ async def start_meeting(req: MeetingStart):
         conn.close()
 
         if pre_brief_text:
-            from notion_reporter import _post
-            _post(f"blocks/{notion_page}/children", {"children": [
+            from notion_reporter import _patch
+            _patch(f"blocks/{notion_page}/children", {"children": [
                 {"object": "block", "type": "callout",
                  "callout": {"rich_text": [{"text": {"content":
                      f"Pre-meeting context:\n{pre_brief_text}"

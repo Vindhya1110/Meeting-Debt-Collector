@@ -114,14 +114,28 @@ MDC.poll = function () {
 
   let text = "";
   let speaker = "Unknown";
+  let matchedSelector = null;
 
   for (const sel of (window.MDC_SELECTORS?.caption || [])) {
     const el = document.querySelector(sel);
-    if (el?.textContent?.trim()) { text = el.textContent.trim(); break; }
+    if (el?.textContent?.trim()) { text = el.textContent.trim(); matchedSelector = sel; break; }
   }
   for (const sel of (window.MDC_SELECTORS?.speaker || [])) {
     const el = document.querySelector(sel);
     if (el?.textContent?.trim()) { speaker = el.textContent.trim(); break; }
+  }
+
+  // Every ~10s (roughly 20 polls at 500ms), log whether ANY caption selector
+  // is matching anything at all — the single most useful signal for
+  // diagnosing "nothing got captured" without spamming the console every poll.
+  MDC._pollCount = (MDC._pollCount || 0) + 1;
+  if (MDC._pollCount % 20 === 0) {
+    if (matchedSelector) {
+      console.log(`[MDC] caption selector "${matchedSelector}" is matching text on the page.`);
+    } else {
+      console.warn("[MDC] no caption selector matched anything. Are Meet's captions (CC) turned on? " +
+                   "If yes, Meet's DOM has likely changed — inspect the caption text on screen and update content_meet.js's MDC_SELECTORS.caption list.");
+    }
   }
 
   if (!text || text === MDC.state.lastSeen) return;

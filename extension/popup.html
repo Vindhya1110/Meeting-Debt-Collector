@@ -15,6 +15,8 @@
     <span id="platform-badge" class="platform-badge" style="display:none"></span>
   </div>
 
+  <div id="agent-status" class="agent-status checking">Checking agent connection...</div>
+
   <!-- PRE-MEETING SETUP -->
   <div id="setup-section">
     <label>Meeting title</label>
@@ -43,6 +45,10 @@
     </div>
     <div class="caption-feed" id="captionFeed">
       <div class="waiting">Listening for captions...</div>
+    </div>
+    <div id="no-captions-warning" class="warning-box" style="display:none">
+      No captions detected yet. Make sure Meet's captions (CC) are turned on —
+      click the CC icon in Meet's toolbar if the extension didn't auto-enable it.
     </div>
     <button class="btn-stop" id="stopBtn">■ Stop & Save to Notion</button>
   </div>

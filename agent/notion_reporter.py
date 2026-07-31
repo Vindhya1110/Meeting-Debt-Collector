@@ -202,7 +202,7 @@ def update_meeting_page(page_id: str, updates: dict):
         _patch(f"pages/{page_id}", {"properties": props})
 
     if "mom" in updates and updates["mom"]:
-        _post(f"blocks/{page_id}/children", {
+        _patch(f"blocks/{page_id}/children", {
             "children": [
                 {"object": "block", "type": "heading_2",
                  "heading_2": {"rich_text": [{"text": {"content": "Minutes of Meeting"}}]}},
@@ -228,7 +228,7 @@ def update_meeting_page(page_id: str, updates: dict):
                         {"text": {"content": f"{icon} {s['label']} - {s['status']}"}}
                     ]}
                 })
-            _post(f"blocks/{page_id}/children", {"children": rows[:50]})
+            _patch(f"blocks/{page_id}/children", {"children": rows[:50]})
 
 # ── Commitment pages ──────────────────────────────────────────────────────────
 
@@ -261,7 +261,7 @@ def create_commitment_page(c: dict, meeting_title: str) -> str:
     page_id = result["id"] if result else ""
 
     if page_id and c.get("commitment_text"):
-        _post(f"blocks/{page_id}/children", {"children": [
+        _patch(f"blocks/{page_id}/children", {"children": [
             {"object": "block", "type": "quote",
              "quote": {"rich_text": [{"text": {"content":
                  f"\"{c['commitment_text']}\" - {c.get('speaker', '?')} "
@@ -281,7 +281,7 @@ def update_commitment_status(page_id: str, status: str,
         props["Nudges Sent"] = {"number": nudge_count}
     _patch(f"pages/{page_id}", {"properties": props})
     if detail:
-        _post(f"blocks/{page_id}/children", {"children": [
+        _patch(f"blocks/{page_id}/children", {"children": [
             {"object": "block", "type": "callout",
              "callout": {"rich_text": [{"text": {"content":
                  f"[{datetime.utcnow().strftime('%Y-%m-%d %H:%M')}] {detail[:1900]}"

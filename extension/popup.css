@@ -25,6 +25,7 @@ button { width:100%; padding:9px; border:none; border-radius:6px;
          font-size:13px; font-weight:600; cursor:pointer; margin-top:4px; }
 .btn-start { background:#1D9E75; color:#fff; }
 .btn-start:hover { background:#0f6e56; }
+.btn-start:disabled { background:#ccc; color:#888; cursor:not-allowed; }
 .btn-stop  { background:#e24b4a; color:#fff; }
 .btn-stop:hover { background:#a32d2d; }
 .stats-row { display:flex; gap:12px; margin-bottom:8px; }
@@ -41,3 +42,15 @@ button { width:100%; padding:9px; border:none; border-radius:6px;
 .speaker { font-weight:700; color:#1D9E75; }
 .waiting { color:#aaa; font-style:italic; }
 #status-msg { font-size:11px; color:#888; margin-top:6px; min-height:16px; }
+
+.agent-status {
+  font-size:11px; padding:6px 8px; border-radius:6px; margin-bottom:10px;
+  font-weight:600;
+}
+.agent-status.checking { background:#f1efe8; color:#5f5e5a; }
+.agent-status.ok { background:#d4f4e6; color:#0f6e56; }
+.agent-status.down { background:#fde2e1; color:#a32d2d; }
+.warning-box {
+  background:#fff4d6; color:#8a6116; border-radius:6px; padding:8px;
+  font-size:11px; line-height:1.4; margin-bottom:8px;
+}
