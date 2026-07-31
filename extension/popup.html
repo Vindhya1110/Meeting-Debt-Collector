@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <span class="logo">🎯</span>
+    <h1>Meeting Debt Collector</h1>
+  </div>
+
+  <div id="badge-row">
+    <span id="badge" class="badge off">Not capturing</span>
+    <span id="platform-badge" class="platform-badge" style="display:none"></span>
+  </div>
+
+  <!-- PRE-MEETING SETUP -->
+  <div id="setup-section">
+    <label>Meeting title</label>
+    <input type="text" id="meetTitle" placeholder="Sprint Review · Aug 1">
+
+    <label>Meeting type</label>
+    <select id="meetType">
+      <option value="sprint_review">Sprint Review</option>
+      <option value="project_kickoff">Project Kickoff</option>
+      <option value="event_planning">Event Planning</option>
+      <option value="club_meeting" selected>Club Meeting / General</option>
+    </select>
+
+    <label>Pre-meeting context (optional)</label>
+    <textarea id="preBrief" rows="3"
+      placeholder="E.g. Last week Alice missed the API deadline. Today we need to finalize the demo plan."></textarea>
+
+    <button class="btn-start" id="startBtn">▶ Start Capturing</button>
+  </div>
+
+  <!-- LIVE CAPTURE VIEW -->
+  <div id="live-section" style="display:none">
+    <div class="stats-row">
+      <div class="stat"><span id="chunkCount">0</span><small>chunks</small></div>
+      <div class="stat"><span id="commitCount">0</span><small>commitments</small></div>
+    </div>
+    <div class="caption-feed" id="captionFeed">
+      <div class="waiting">Listening for captions...</div>
+    </div>
+    <button class="btn-stop" id="stopBtn">■ Stop & Save to Notion</button>
+  </div>
+
+  <div id="status-msg"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

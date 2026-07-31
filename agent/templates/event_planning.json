@@ -1,0 +1,11 @@
+{
+  "type": "event_planning",
+  "slots": [
+    {"id":"venue",       "label":"Venue confirmed",              "required":true},
+    {"id":"budget",      "label":"Budget discussed",             "required":true},
+    {"id":"permissions", "label":"Permissions assigned",         "required":true},
+    {"id":"publicity",   "label":"Publicity plan mentioned",     "required":false},
+    {"id":"volunteers",  "label":"Volunteer roles assigned",     "required":true},
+    {"id":"owners",      "label":"Every task has a named owner", "required":true}
+  ]
+}

@@ -1,187 +1,290 @@
-INFO:     Started server process [19872]
+INFO:     Started server process [17876]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-Watch loop started - ticking every 10s
-INFO:     127.0.0.1:49678 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /commitments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54854 - "GET /meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /commitments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /commitments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63830 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /report/meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51270 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60847 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56032 - "GET /health HTTP/1.1" 200 OK
+[Notion] databases -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+[Notion] Failed to create meetings database - is the parent page shared with the integration? (••• -> Connections -> add your integration)
+[Notion] databases -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+[Notion] Failed to create commitments database - is the parent page shared with the integration? (••• -> Connections -> add your integration)
+[Notion] databases -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+[Notion] Failed to create people database - is the parent page shared with the integration? (••• -> Connections -> add your integration)
+[Notion] databases -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+[Notion] Failed to create agenda database - is the parent page shared with the integration? (••• -> Connections -> add your integration)
+[Notion] Workspace setup complete
+[Scheduler] Watch loop started - ticking every 10s
+[Agent] Running. Extension or dashboard can now connect.
+INFO:     127.0.0.1:54026 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64493 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59745 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59741 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50282 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59340 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58779 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63022 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51917 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59245 - "GET /app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61656 - "GET /meetings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /commitments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61941 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59245 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55206 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55240 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52425 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60016 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64732 - "OPTIONS /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56312 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64237 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50573 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60016 - "OPTIONS /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60016 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/chunk HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
+    await route.handle(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
+    await super().handle(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
+    return await _ingest(mid, req.chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
+    return await _ingest_locked(mid, chunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
+    raw = extract(chunk, attendees, mid)
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
+    raw = call(
+        system=EXTRACTION_PROMPT.format(
+    ...<7 lines>...
+        provider="groq"
+    )
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
+    resp = client.chat.completions.create(**kwargs)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 413 - {'error': {'message': 'Request too large for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per minute (TPM): Limit 12000, Requested 13569, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+INFO:     127.0.0.1:60570 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61899 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52704 - "GET /health HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:60570 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62694 - "GET /health HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:65170 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:52475 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:60570 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:60450 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62694 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /health HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:56410 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:65170 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:55478 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52411 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50705 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51163 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61962 - "GET /health HTTP/1.1" 200 OK
+[Notion] pages -> 404: {"object":"error","status":404,"code":"object_not_found","message":"Could not find page with ID: 3aea20cb-f95e-8003-9718-f36fe4e42f3e. Make sure the relevant pages and databases are shared with your integration \"Meeting Debt Collector\".","additional_data":{"integration_id":"3aea20cb-f95e-8172-a39c
+INFO:     127.0.0.1:51417 - "POST /meetings/acbc051c-8cda-451d-906d-617cd031f8e0/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56983 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51690 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55432 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55432 - "GET /health HTTP/1.1" 200 OK

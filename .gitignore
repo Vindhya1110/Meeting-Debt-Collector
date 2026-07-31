@@ -2,6 +2,9 @@
 backend/credentials.json
 backend/token.json
 backend/meeting_debt.db
+agent/credentials.json
+agent/token.json
+agent/meeting_debt.db
 .claude
 __pycache__/
 *.pyc
@@ -9,3 +12,4 @@ __pycache__/
 .DS_Store
 venv/
 .cache/
+server.log

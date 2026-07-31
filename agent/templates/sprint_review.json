@@ -1,0 +1,11 @@
+{
+  "type": "sprint_review",
+  "slots": [
+    {"id":"blockers",     "label":"Blockers discussed",          "required":true},
+    {"id":"demos",        "label":"Work demoed",                 "required":false},
+    {"id":"next_scope",   "label":"Next sprint scope agreed",    "required":true},
+    {"id":"owners",       "label":"Every task has a named owner","required":true},
+    {"id":"testing",      "label":"Testing plan mentioned",      "required":true},
+    {"id":"retro",        "label":"What went wrong discussed",   "required":false}
+  ]
+}

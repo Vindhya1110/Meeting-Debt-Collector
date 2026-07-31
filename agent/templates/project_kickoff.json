@@ -1,0 +1,11 @@
+{
+  "type": "project_kickoff",
+  "slots": [
+    {"id":"goals",     "label":"Goals defined",                 "required":true},
+    {"id":"roles",     "label":"Roles assigned",                "required":true},
+    {"id":"timeline",  "label":"Timeline set",                  "required":true},
+    {"id":"risks",     "label":"Risks identified",              "required":false},
+    {"id":"milestone", "label":"First milestone named + owner", "required":true},
+    {"id":"owners",    "label":"Every task has a named owner",  "required":true}
+  ]
+}

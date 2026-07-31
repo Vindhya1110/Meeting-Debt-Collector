@@ -1,9 +1,10 @@
-# When MOCK_MODE=true, these replace all real API calls.
+# When MOCK_MODE=true, these replace all real LLM/API calls.
 # The pipeline still runs end-to-end — just with canned responses.
 
-MOCK_EXTRACTION = [
+MOCK_COMMITMENTS = [
     {
         "speaker": "Alice",
+        "owner": "Alice",
         "commitment_text": "I'll finish the API integration by Thursday",
         "normalized_task": "Finish API integration",
         "explicit_deadline": "Thursday",
@@ -18,6 +19,7 @@ MOCK_EXTRACTION = [
     },
     {
         "speaker": "Bob",
+        "owner": "Bob",
         "commitment_text": "Once Alice finishes, I'll do the integration testing",
         "normalized_task": "Complete integration testing",
         "explicit_deadline": None,
@@ -31,21 +33,8 @@ MOCK_EXTRACTION = [
         "timestamp_sec": 62
     },
     {
-        "speaker": "Rohith",
-        "commitment_text": "we'll handle the deployment, don't worry",
-        "normalized_task": "Handle production deployment",
-        "explicit_deadline": None,
-        "deadline_clue": "before the client call",
-        "depends_on_hint": None,
-        "beneficiary": None,
-        "owner_type": "ownerless",
-        "item_type": "self_commitment",
-        "assigned_by": None,
-        "confidence": 0.91,
-        "timestamp_sec": 89
-    },
-    {
         "speaker": "Priya",
+        "owner": "Priya",
         "commitment_text": "I'll review the API contract by Friday",
         "normalized_task": "Review API contract",
         "explicit_deadline": "Friday",
@@ -60,10 +49,12 @@ MOCK_EXTRACTION = [
     }
 ]
 
-MOCK_RESOLUTION = MOCK_EXTRACTION  # Deadlines added by main pipeline in mock mode
-
 MOCK_NUDGE_TEXT = (
     "Hey Alice — in Thursday's Sprint Review you said you'd finish the API "
     "integration. That deadline is tomorrow. Want to send a quick status "
     "update to Bob now?"
 )
+
+MOCK_RESPONSES = {
+    "default": "{}"
+}

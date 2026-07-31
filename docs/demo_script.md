@@ -1,7 +1,10 @@
 # 4-Minute Demo Script
 
-**Setup before you start**: server running at `http://localhost:8000`, dashboard
-open in a browser tab, `MOCK_MODE=false` (or `true` if you want zero API risk).
+**Setup before you start**: server running at `http://localhost:8000` (from
+`agent/`), dashboard open in a browser tab, `MOCK_MODE=false` (or `true` if you
+want zero API risk). This script uses the dashboard's manual-transcript path —
+the Chrome extension drives the exact same pipeline from a live Meet/Zoom/Teams
+call instead, with every meeting/commitment/person mirrored live into Notion.
 
 ## 0:00 — The hook (15s)
 "60-70% of verbal commitments made in meetings are forgotten within 48 hours.

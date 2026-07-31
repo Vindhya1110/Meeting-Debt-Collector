@@ -199,7 +199,7 @@ document.getElementById("create-meeting").addEventListener("click", async () => 
   }
 
   try {
-    const data = await api("/meetings", {
+    const data = await api("/meetings/start", {
       method: "POST",
       body: JSON.stringify({ title, type, owner, attendees, transcript }),
     });
@@ -229,12 +229,13 @@ document.getElementById("send-chunk").addEventListener("click", async () => {
     state.chunkIndex[meetingId] = idx;
     document.getElementById("chunk-text").value = "";
     const alertBox = document.getElementById("chunk-alert");
-    if (data.alert) {
-      alertBox.innerHTML = `<div class="alert-box">${data.alert}</div>`;
+    const missing = data.agenda?.missed_required || [];
+    if (missing.length) {
+      alertBox.innerHTML = `<div class="alert-box">Still not covered: ${missing.map(s => s.label).join(", ")}</div>`;
     } else {
       alertBox.innerHTML = "";
     }
-    toast(`${data.commitments_extracted} commitment(s) extracted from chunk.`);
+    toast(`${data.commitments_this_chunk} commitment(s) extracted from chunk.`);
   } catch (e) {
     toast("Chunk ingestion failed: " + e.message, true);
   }
@@ -244,7 +245,7 @@ document.getElementById("finalize-meeting").addEventListener("click", async () =
   const meetingId = document.getElementById("chunk-meeting-select").value;
   if (!meetingId) { toast("Create a meeting first.", true); return; }
   try {
-    const data = await api(`/meetings/${meetingId}/finalize`, { method: "POST" });
+    const data = await api(`/meetings/${meetingId}/end`, { method: "POST" });
     const el = document.getElementById("mom-output");
     el.style.display = "block";
     el.textContent = data.mom;
@@ -256,8 +257,13 @@ document.getElementById("finalize-meeting").addEventListener("click", async () =
 document.getElementById("prebrief-meeting").addEventListener("click", async () => {
   const meetingId = document.getElementById("chunk-meeting-select").value;
   if (!meetingId) { toast("Create a meeting first.", true); return; }
+  const meeting = state.meetings.find(m => m.id === meetingId);
+  const attendeeNames = (meeting?.attendees || []).map(a => a.name || a).filter(Boolean);
   try {
-    const data = await api(`/meetings/${meetingId}/pre-brief`);
+    const data = await api(`/meetings/${meetingId}/pre-brief`, {
+      method: "POST",
+      body: JSON.stringify({ attendees: attendeeNames, context_notes: "" }),
+    });
     const el = document.getElementById("brief-output");
     el.style.display = "block";
     el.textContent = data.brief;

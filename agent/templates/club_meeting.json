@@ -1,0 +1,9 @@
+{
+  "type": "club_meeting",
+  "slots": [
+    {"id":"attendance",   "label":"Attendance noted",            "required":false},
+    {"id":"next_event",   "label":"Next event planned",          "required":true},
+    {"id":"action_items", "label":"Action items assigned",       "required":true},
+    {"id":"owners",       "label":"Every task has a named owner","required":true}
+  ]
+}
