@@ -1,0 +1,9 @@
+[00:00] Alice: Good morning everyone. Let's get started with the sprint review.
+[00:15] Alice: I'll finish the payments API by Thursday end of day.
+[00:32] Bob: Once Alice finishes the API, I'll complete the integration testing by Friday morning.
+[00:48] Priya: I'll review the API contract and send comments to Rohith by Thursday noon.
+[01:05] Rohith: I'll prepare the deployment checklist by Wednesday evening.
+[01:20] Alice: Great. Let's also make sure testing covers the edge cases we discussed.
+[01:35] Priya: I'll update the test plan document by Thursday as well.
+[01:50] Alice: Okay, anything else before we wrap up?
+[02:00] Rohith: I think we're good. Talk later everyone.

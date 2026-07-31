@@ -1,0 +1,11 @@
+[00:00] Rohith: Alright, quick sync. Let's go.
+[00:12] Alice: So I'll get the API done before the client call.
+[00:24] Bob: We should probably look into caching at some point, just a thought.
+[00:38] Rohith: Yeah definitely. Anyway, we'll handle the deployment, don't worry about it.
+[00:55] Alice: Who's doing the deployment exactly?
+[01:02] Rohith: Like, the team. We'll sort it out.
+[01:15] Priya: I'll write the test cases, I can get that done by end of week.
+[01:28] Bob: Once Alice is done with the API, I'll do the front-end integration.
+[01:40] Alice: Also, let's grab 15 minutes Thursday afternoon to go over the client demo flow.
+[01:55] Rohith: Yeah let's do that. Okay, anything else before we close?
+[02:05] Bob: I think that's it.

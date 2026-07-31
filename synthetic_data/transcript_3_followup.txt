@@ -1,0 +1,9 @@
+[00:00] Alice: Quick check-in from last week's sync.
+[00:12] Rohith: Yeah, so about the deployment — I'll actually own that. Should be done by Monday.
+[00:28] Alice: Good. I actually didn't finish the API on Thursday, I'll push that to next week.
+[00:45] Bob: So my integration gets pushed too then, makes sense.
+[01:00] Priya: I finished the test cases already, that's done.
+[01:12] Alice: Perfect. I'll finish the API by next Wednesday, promise.
+[01:28] Rohith: This is actually the second time Alice has mentioned the API.
+[01:35] Alice: I know, I know. Wednesday for real this time.
+[01:50] Rohith: Let's wrap up. I'll send the updated timeline to everyone by tomorrow morning.

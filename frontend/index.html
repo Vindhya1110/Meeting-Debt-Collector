@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Debt Collector</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #161923;
+    --panel-2: #1c202c;
+    --border: #2a2f3d;
+    --text: #e6e8ee;
+    --muted: #8b91a3;
+    --accent: #5b8cff;
+    --green: #3ecf8e;
+    --amber: #f5a623;
+    --red: #ef5350;
+    --purple: #b388ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 { font-size: 18px; margin: 0; }
+  header h1 span { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+  #status-pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  #status-pill.ok { color: var(--green); border-color: var(--green); }
+  #status-pill.mock { color: var(--amber); border-color: var(--amber); }
+  #status-pill.down { color: var(--red); border-color: var(--red); }
+
+  nav {
+    display: flex;
+    gap: 4px;
+    padding: 10px 24px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+  }
+  nav button.active { color: var(--text); border-bottom-color: var(--accent); }
+
+  main { padding: 24px; max-width: 1200px; margin: 0 auto; }
+  .tab { display: none; }
+  .tab.active { display: block; }
+
+  .grid { display: grid; gap: 16px; }
+  .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .card h2 { margin: 0 0 14px; font-size: 15px; color: var(--text); }
+  .card h3 { margin: 0 0 10px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+  label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; }
+  input, select, textarea {
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  textarea { resize: vertical; min-height: 90px; }
+  button.btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  button.btn:hover { opacity: .9; }
+  button.btn.secondary { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); }
+  button.btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; font-size: 12px; }
+  button.btn.small { padding: 5px 10px; font-size: 12px; }
+  button.btn.danger { background: var(--red); }
+  button.btn.green { background: var(--green); color: #05130d; }
+
+  .attendee-row { display: flex; gap: 6px; margin-bottom: 6px; }
+  .attendee-row input { flex: 1; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .03em; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  td { padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge.open { background: rgba(91,140,255,.15); color: var(--accent); }
+  .badge.nudged { background: rgba(245,166,35,.15); color: var(--amber); }
+  .badge.escalated { background: rgba(239,83,80,.2); color: var(--red); }
+  .badge.done { background: rgba(62,207,142,.15); color: var(--green); }
+  .badge.missed { background: rgba(239,83,80,.25); color: var(--red); }
+  .badge.renegotiated { background: rgba(179,136,255,.18); color: var(--purple); }
+  .badge.review { background: rgba(245,166,35,.15); color: var(--amber); }
+
+  .muted { color: var(--muted); }
+  .quote { font-style: italic; color: var(--muted); font-size: 12.5px; }
+  .actions-cell { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filters { display: flex; gap: 10px; margin-bottom: 14px; align-items: end; }
+  .filters > div { flex: 1; }
+
+  .alert-box {
+    background: rgba(245,166,35,.1);
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .slot-list { list-style: none; padding: 0; margin: 0; }
+  .slot-list li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--border); }
+  .slot-list li:last-child { border-bottom: none; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dot.covered { background: var(--green); }
+  .dot.pending { background: var(--muted); }
+  .req-tag { font-size: 10px; color: var(--muted); margin-left: auto; }
+
+  #mom-output, #brief-output { white-space: pre-wrap; font-size: 13px; line-height: 1.6; background: var(--panel-2); padding: 14px; border-radius: 8px; border: 1px solid var(--border); }
+
+  .toast-wrap { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+  .toast { background: var(--panel-2); border: 1px solid var(--border); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; font-size: 13px; max-width: 320px; box-shadow: 0 4px 16px rgba(0,0,0,.3); }
+
+  .empty { color: var(--muted); font-size: 13px; padding: 20px 0; text-align: center; }
+  .row-inline { display: flex; gap: 10px; align-items: center; }
+  .meeting-pick { display: flex; gap: 8px; margin-bottom: 14px; }
+  .meeting-pick select { flex: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Meeting Debt Collector <span>an agent that stands between "I'll do that" and the follow-up</span></h1>
+  <div id="status-pill">connecting…</div>
+</header>
+
+<nav>
+  <button class="tab-btn active" data-tab="run">Run a Meeting</button>
+  <button class="tab-btn" data-tab="commitments">Commitment Feed</button>
+  <button class="tab-btn" data-tab="agenda">Agenda Coverage</button>
+  <button class="tab-btn" data-tab="reports">Reports</button>
+  <button class="tab-btn" data-tab="simulate">Clock &amp; Demo</button>
+</nav>
+
+<main>
+
+  <!-- RUN A MEETING -->
+  <section class="tab active" id="tab-run">
+    <div class="grid cols-2">
+      <div class="card">
+        <h2>New Meeting</h2>
+        <label>Title</label>
+        <input id="m-title" placeholder="Sprint Review — Jul 31">
+        <label>Type</label>
+        <select id="m-type">
+          <option value="sprint_review">Sprint Review</option>
+          <option value="event_planning">Event Planning</option>
+          <option value="project_kickoff">Project Kickoff</option>
+          <option value="club_meeting">Club Meeting</option>
+        </select>
+        <label>Meeting Chair / Owner</label>
+        <input id="m-owner" placeholder="Alice">
+        <label>Attendees</label>
+        <div id="attendee-list"></div>
+        <button class="btn ghost small" id="add-attendee" type="button">+ Add attendee</button>
+        <label>Transcript (paste full transcript for one-shot processing)</label>
+        <textarea id="m-transcript" placeholder="[00:00] Alice: Good morning everyone..."></textarea>
+        <div class="row-inline" style="margin-top:14px;">
+          <button class="btn" id="create-meeting">Create &amp; Process</button>
+          <select id="sample-picker" style="max-width:220px;">
+            <option value="">Load sample transcript…</option>
+            <option value="transcript_1_clean.txt">Clean transcript</option>
+            <option value="transcript_2_messy.txt">Messy transcript</option>
+            <option value="transcript_3_followup.txt">Follow-up transcript</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Live Chunk Ingestion</h2>
+        <p class="muted" style="font-size:12.5px;">Simulate a live meeting by feeding ~30s chunks to an existing meeting one at a time.</p>
+        <label>Meeting</label>
+        <select id="chunk-meeting-select"></select>
+        <label>Chunk text</label>
+        <textarea id="chunk-text" placeholder="Alice: I'll finish the API by Thursday."></textarea>
+        <div class="row-inline" style="margin-top:14px;">
+          <button class="btn secondary" id="send-chunk">Send Chunk</button>
+          <button class="btn secondary" id="finalize-meeting">Finalize &amp; Generate MoM</button>
+          <button class="btn secondary" id="prebrief-meeting">Pre-Meeting Brief</button>
+        </div>
+        <div id="chunk-alert"></div>
+        <div id="mom-output" style="display:none; margin-top:14px;"></div>
+        <div id="brief-output" style="display:none; margin-top:14px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITMENT FEED -->
+  <section class="tab" id="tab-commitments">
+    <div class="card">
+      <h2>Commitment Feed</h2>
+      <div class="filters">
+        <div>
+          <label>Status</label>
+          <select id="filter-status">
+            <option value="">All</option>
+            <option>open</option>
+            <option>nudged</option>
+            <option>escalated</option>
+            <option>done</option>
+            <option>missed</option>
+            <option>renegotiated</option>
+            <option>review</option>
+          </select>
+        </div>
+        <div>
+          <label>Owner</label>
+          <input id="filter-owner" placeholder="e.g. Alice">
+        </div>
+        <div style="flex:0;">
+          <button class="btn secondary" id="refresh-commitments">Refresh</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Owner</th><th>Task</th><th>Deadline</th><th>Status</th><th>Meeting</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="commitments-body"></tbody>
+      </table>
+      <div class="empty" id="commitments-empty" style="display:none;">No commitments yet — process a meeting first.</div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="tab" id="tab-agenda">
+    <div class="card">
+      <h2>Agenda Coverage</h2>
+      <div class="meeting-pick">
+        <select id="agenda-meeting-select"></select>
+        <button class="btn secondary small" id="load-agenda">Load</button>
+      </div>
+      <div id="agenda-alert"></div>
+      <ul class="slot-list" id="agenda-slots"></ul>
+      <div class="empty" id="agenda-empty" style="display:none;">Select a meeting to see agenda coverage.</div>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section class="tab" id="tab-reports">
+    <div class="grid cols-2">
+      <div class="card">
+        <h2>Follow-Through by Person</h2>
+        <div id="people-summary" class="quote" style="margin-bottom:12px;"></div>
+        <table>
+          <thead><tr><th>Person</th><th>Committed</th><th>On-time</th><th>Missed</th><th>Rate</th><th></th></tr></thead>
+          <tbody id="people-body"></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Meeting Debt Score</h2>
+        <table>
+          <thead><tr><th>Meeting</th><th>Total</th><th>Done</th><th>Missed</th><th>Debt</th></tr></thead>
+          <tbody id="meetings-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <button class="btn secondary" id="refresh-reports">Refresh Reports</button>
+    </div>
+  </section>
+
+  <!-- SIMULATE -->
+  <section class="tab" id="tab-simulate">
+    <div class="grid cols-2">
+      <div class="card">
+        <h2>Agent Clock</h2>
+        <p class="muted" style="font-size:12.5px;">The watch loop makes nudge / escalate / miss decisions off this simulated clock, not wall-clock time — so you can demo a week of follow-up in seconds.</p>
+        <div class="row-inline" style="margin:14px 0;">
+          <div class="muted">Agent now:</div>
+          <div id="agent-now" style="font-weight:600;">—</div>
+        </div>
+        <label>Advance by (hours)</label>
+        <input id="advance-hours" type="number" value="24">
+        <div class="row-inline" style="margin-top:14px;">
+          <button class="btn" id="advance-clock">Advance Clock + Run Watch Loop</button>
+          <button class="btn secondary" id="reset-clock">Reset to Real Time</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>What Just Happened</h2>
+        <p class="muted" style="font-size:12.5px;">After advancing the clock, refresh the Commitment Feed tab to see nudges, escalations, and missed items appear.</p>
+        <div id="simulate-log" class="quote"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

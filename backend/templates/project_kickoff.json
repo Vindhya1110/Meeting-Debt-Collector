@@ -1,0 +1,11 @@
+{
+  "type": "project_kickoff",
+  "display_name": "Project Kickoff",
+  "slots": [
+    {"id": "goals", "label": "Project goals defined", "required": true},
+    {"id": "roles", "label": "Team roles assigned", "required": true},
+    {"id": "timeline", "label": "Timeline and milestones set", "required": true},
+    {"id": "risks", "label": "Risks identified", "required": false},
+    {"id": "first_milestone", "label": "First milestone named with owner", "required": true}
+  ]
+}

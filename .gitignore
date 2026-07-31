@@ -1,0 +1,11 @@
+.env
+backend/credentials.json
+backend/token.json
+backend/meeting_debt.db
+.claude
+__pycache__/
+*.pyc
+*.db
+.DS_Store
+venv/
+.cache/
