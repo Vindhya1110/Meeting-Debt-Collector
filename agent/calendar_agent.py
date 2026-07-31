@@ -1,134 +1,334 @@
-import os
+"""
+Google Calendar integration.
+
+APPROVAL FLOW (mandatory — never bypass):
+  1. scheduler.py detects missed/at-risk commitment
+  2. calls propose_and_ask_slack(commitment)
+       → creates a calendar_draft row in SQLite
+       → posts Slack message with a /calendar/{draft_id}/confirm link
+  3. Human clicks the link / runs the curl command
+  4. main.py /calendar/{draft_id}/confirm calls confirm_event(draft_id)
+       → ONLY THEN creates the Google Calendar event
+       → Posts the Meet link back to Slack
+
+An agent that silently books time on someone's calendar is unacceptable.
+"""
+
+import os, json, uuid, requests
 from datetime import datetime, timedelta
+from models import get_db, log_event
 
-CREDS_PATH = os.getenv("GOOGLE_CALENDAR_CREDS", "credentials.json")
-TOKEN_PATH = "token.json"
-SCOPES = ["https://www.googleapis.com/auth/calendar"]
+CREDS_PATH = os.getenv("GOOGLE_CALENDAR_CREDS", "agent/credentials.json")
+TOKEN_PATH = "agent/token.json"
+SCOPES     = ["https://www.googleapis.com/auth/calendar"]
+SLACK      = os.getenv("SLACK_WEBHOOK_URL", "")
+AGENT_URL  = f"http://localhost:{os.getenv('AGENT_PORT', '8000')}"
 
-def _get_service(interactive: bool = False):
-    """
-    Build an authenticated Calendar service.
-    interactive=False (default): only uses an existing saved token. Never opens
-    a browser. Returns None if no valid token exists yet — callers must treat
-    that as "calendar unavailable" and fall back gracefully.
-    interactive=True: allowed to run the one-time browser consent flow. Only
-    used from the explicit setup script or user-triggered confirm actions.
-    """
+
+# ── Google Auth ───────────────────────────────────────────────────────────────
+
+def _get_service():
+    """Get authenticated Google Calendar service. Opens browser on first run."""
     from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
     from google.auth.transport.requests import Request
     from googleapiclient.discovery import build
-    import os.path
 
     creds = None
     if os.path.exists(TOKEN_PATH):
         creds = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
 
-    if creds and creds.expired and creds.refresh_token:
-        try:
-            creds.refresh(Request())
-            with open(TOKEN_PATH, "w") as f:
-                f.write(creds.to_json())
-        except Exception as e:
-            print(f"Calendar token refresh failed: {e}")
-            creds = None
-
     if not creds or not creds.valid:
-        if not interactive:
-            return None
-        from google_auth_oauthlib.flow import InstalledAppFlow
-        if not os.path.exists(CREDS_PATH):
-            print(f"Calendar credentials file not found at {CREDS_PATH}")
-            return None
-        flow = InstalledAppFlow.from_client_secrets_file(CREDS_PATH, SCOPES)
-        creds = flow.run_local_server(port=0)
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            if not os.path.exists(CREDS_PATH):
+                print("[Calendar] credentials.json not found — skipping calendar setup")
+                return None
+            flow = InstalledAppFlow.from_client_secrets_file(CREDS_PATH, SCOPES)
+            creds = flow.run_local_server(port=0)
         with open(TOKEN_PATH, "w") as f:
             f.write(creds.to_json())
 
     return build("calendar", "v3", credentials=creds)
 
-def get_upcoming_events(days_ahead: int = 7) -> list:
-    """Fetch calendar events to provide context for deadline resolution.
-    Never triggers interactive auth — returns [] if not yet connected, and
-    resolver.py falls back to a demo calendar in that case."""
+
+def get_upcoming_events(days: int = 7) -> list:
+    """
+    Fetch calendar events for deadline resolution context.
+    Returns list of {title, datetime} for the resolver.
+    Falls back to [] if calendar not configured.
+    """
     try:
-        service = _get_service(interactive=False)
-        if service is None:
+        svc = _get_service()
+        if not svc:
             return []
-
         now = datetime.utcnow().isoformat() + "Z"
-        end = (datetime.utcnow() + timedelta(days=days_ahead)).isoformat() + "Z"
-
-        result = service.events().list(
-            calendarId="primary",
-            timeMin=now,
-            timeMax=end,
-            maxResults=20,
-            singleEvents=True,
-            orderBy="startTime"
+        end = (datetime.utcnow() + timedelta(days=days)).isoformat() + "Z"
+        result = svc.events().list(
+            calendarId="primary", timeMin=now, timeMax=end,
+            maxResults=20, singleEvents=True, orderBy="startTime"
         ).execute()
-
         return [
             {
-                "title": e.get("summary", ""),
-                "datetime": e["start"].get("dateTime", e["start"].get("date"))
+                "title":    e.get("summary", ""),
+                "datetime": e["start"].get("dateTime", e["start"].get("date", "")),
             }
             for e in result.get("items", [])
         ]
     except Exception as e:
-        print(f"Calendar fetch failed, using demo calendar: {e}")
-        return []  # Falls back to DEMO_CALENDAR in resolver.py
+        print(f"[Calendar] fetch failed (using demo calendar): {e}")
+        return []
 
-def propose_followup_meeting(commitment: dict, suggested_time: str) -> dict:
+
+# ── Step 1: Propose → Slack (called by scheduler, never creates the event) ───
+
+def propose_and_ask_slack(commitment: dict) -> str:
     """
-    Draft a calendar event proposal — does NOT create it yet.
-    Returns draft for human confirmation via Slack/dashboard.
-    This is the "verify before create" pattern.
+    Creates a draft calendar event row in SQLite.
+    Posts a Slack message asking for approval.
+    Returns the draft_id.
+
+    The event is NOT created yet. Human must approve.
     """
-    return {
-        "draft": True,
-        "summary": f"Quick sync: {commitment['normalized_task']}",
-        "description": f"Follow-up on missed commitment: {commitment['commitment_text']}",
-        "start": suggested_time,
-        "duration_min": 15,
-        "attendees": [commitment["owner"]],
-        "commitment_id": commitment["id"]
+    draft_id = str(uuid.uuid4())
+    now      = datetime.utcnow()
+
+    # Suggest a time: next business day at 10 AM
+    suggested = _next_business_day_10am(now)
+
+    # Save draft to SQLite
+    conn = get_db()
+    conn.execute(
+        "INSERT INTO calendar_drafts "
+        "(id, commitment_id, summary, start_iso, duration_min, attendees, status, created_at) "
+        "VALUES (?, ?, ?, ?, ?, ?, 'pending', ?)",
+        (
+            draft_id,
+            commitment["id"],
+            f"Quick sync: {commitment.get('normalized_task', 'follow-up')}",
+            suggested.isoformat(),
+            15,
+            json.dumps([commitment.get("owner", "Unknown")]),
+            now.isoformat(),
+        )
+    )
+    conn.commit()
+    conn.close()
+
+    # Log the proposal
+    log_event(commitment["id"], "calendar_proposed", draft_id)
+
+    # Post Slack approval message
+    _post_approval_to_slack(draft_id, commitment, suggested)
+
+    return draft_id
+
+
+def _post_approval_to_slack(draft_id: str, commitment: dict, suggested: datetime):
+    """
+    Post a Slack message asking the human to approve or deny the calendar event.
+    Includes the approve curl command so they can act without a UI.
+    """
+    if not SLACK:
+        print(f"[Calendar] No Slack webhook — draft {draft_id[:8]} pending approval")
+        return
+
+    owner    = commitment.get("owner", "Unknown")
+    task     = commitment.get("normalized_task", "follow-up")
+    verbatim = commitment.get("commitment_text", "")
+    time_str = suggested.strftime("%A %b %d at %-I:%M %p")
+
+    approve_url = f"{AGENT_URL}/calendar/{draft_id}/confirm"
+
+    message = {
+        "text": f"📅 *Calendar Event Proposed — Approval Required*",
+        "attachments": [
+            {
+                "color":  "#FFA500",
+                "fields": [
+                    {"title": "For",      "value": owner,    "short": True},
+                    {"title": "Topic",    "value": task,     "short": True},
+                    {"title": "Proposed", "value": time_str, "short": True},
+                    {"title": "Duration", "value": "15 min", "short": True},
+                    {
+                        "title": "Original commitment",
+                        "value": f'"{verbatim}"',
+                        "short": False,
+                    },
+                ],
+            },
+            {
+                "color": "#1D9E75",
+                "text": (
+                    f"*To approve and create the Google Calendar event + Meet link:*\n"
+                    f"```\n"
+                    f"curl -X POST {approve_url}\n"
+                    f"     -H 'Content-Type: application/json'\n"
+                    f"     -d '{{\"attendee_emails\": [\"owner@email.com\"]}}'\n"
+                    f"```\n"
+                    f"Or click: <{approve_url}|Approve in browser>\n\n"
+                    f"*To deny:* No action needed — draft expires in 48h."
+                ),
+            },
+        ],
     }
 
-def create_confirmed_event(draft: dict, attendee_emails: list) -> str:
-    """
-    Called ONLY after human confirmation (POST /calendar/confirm).
-    Creates the actual Google Calendar event with Meet link.
-    Allowed to run the interactive OAuth flow since this is an explicit,
-    human-initiated action — not a side effect of passive processing.
-    Returns the Meet link, or "" if calendar isn't connected.
-    """
     try:
-        service = _get_service(interactive=True)
-        if service is None:
-            return ""
+        requests.post(SLACK, json=message, timeout=5)
+        print(f"[Calendar] Approval request sent to Slack for draft {draft_id[:8]}")
+    except Exception as e:
+        print(f"[Calendar] Slack post failed: {e}")
 
-        start = datetime.fromisoformat(draft["start"])
-        end = start + timedelta(minutes=draft["duration_min"])
+
+# ── Step 2: Confirm → Create event (called ONLY from /calendar/{id}/confirm) ─
+
+def confirm_event(draft_id: str, attendee_emails: list) -> dict:
+    """
+    Called ONLY after human explicitly approves via Slack.
+    Creates the Google Calendar event and returns the Meet link.
+    Updates draft status to 'created' in SQLite.
+    """
+    conn  = get_db()
+    draft = conn.execute(
+        "SELECT * FROM calendar_drafts WHERE id=?", (draft_id,)
+    ).fetchone()
+    conn.close()
+
+    if not draft:
+        return {"ok": False, "error": "Draft not found"}
+
+    draft = dict(draft)
+
+    if draft["status"] == "created":
+        return {"ok": False, "error": "Event already created"}
+
+    meet_link = ""
+    event_url = ""
+
+    try:
+        svc = _get_service()
+        if not svc:
+            raise Exception("Google Calendar not configured")
+
+        start = datetime.fromisoformat(draft["start_iso"])
+        end   = start + timedelta(minutes=draft["duration_min"])
 
         event = {
-            "summary": draft["summary"],
-            "description": draft["description"],
+            "summary":     draft["summary"],
+            "description": f"Auto-proposed by Meeting Debt Collector\n"
+                           f"Commitment ID: {draft['commitment_id']}",
             "start": {"dateTime": start.isoformat(), "timeZone": "Asia/Kolkata"},
-            "end": {"dateTime": end.isoformat(), "timeZone": "Asia/Kolkata"},
-            "attendees": [{"email": e} for e in attendee_emails],
+            "end":   {"dateTime": end.isoformat(),   "timeZone": "Asia/Kolkata"},
+            "attendees": [{"email": e} for e in attendee_emails if "@" in e],
             "conferenceData": {
-                "createRequest": {"requestId": f"mdc-{draft['commitment_id']}"}
-            }
+                "createRequest": {
+                    "requestId":             f"mdc-{draft_id[:8]}",
+                    "conferenceSolutionKey": {"type": "hangoutsMeet"},
+                }
+            },
         }
 
-        result = service.events().insert(
+        result = svc.events().insert(
             calendarId="primary",
             body=event,
             conferenceDataVersion=1,
-            sendUpdates="all"
+            sendUpdates="all",
         ).execute()
 
-        return result.get("hangoutLink", result.get("htmlLink", ""))
+        meet_link = result.get("hangoutLink", "")
+        event_url = result.get("htmlLink", "")
+
+        print(f"[Calendar] Event created: {event_url}")
+
     except Exception as e:
-        print(f"Calendar event creation failed: {e}")
-        return ""
+        print(f"[Calendar] Event creation failed: {e}")
+        # Post failure to Slack
+        _post_to_slack(
+            f"❌ *Calendar event creation failed*\n"
+            f"Draft: `{draft_id[:8]}`\nError: {e}"
+        )
+        return {"ok": False, "error": str(e)}
+
+    # Update SQLite
+    conn = get_db()
+    conn.execute(
+        "UPDATE calendar_drafts SET status='created' WHERE id=?", (draft_id,)
+    )
+    conn.commit()
+    conn.close()
+    log_event(draft["commitment_id"], "calendar_created", event_url)
+
+    # Post success to Slack
+    _post_to_slack(
+        f"✅ *Calendar event created*\n"
+        f"*{draft['summary']}*\n"
+        f"🔗 Meet link: {meet_link or 'Check your calendar'}\n"
+        f"📅 Event: {event_url}"
+    )
+
+    return {
+        "ok":        True,
+        "meet_link": meet_link,
+        "event_url": event_url,
+        "draft_id":  draft_id,
+    }
+
+
+# ── /calendar/{id}/confirm route — add this to agent/main.py ─────────────────
+# ADD these two routes to main.py (they may already exist — if so, REPLACE them)
+
+"""
+ADD TO main.py:
+
+from calendar_agent import confirm_event, propose_and_ask_slack
+
+class CalendarConfirmReq(BaseModel):
+    attendee_emails: List[str] = []
+
+@app.post("/calendar/{draft_id}/confirm")
+async def confirm_calendar_event(draft_id: str, req: CalendarConfirmReq):
+    '''
+    Human-triggered. Called after Slack approval.
+    Creates the actual Google Calendar event.
+    Never call this programmatically from the agent logic itself.
+    '''
+    result = confirm_event(draft_id, req.attendee_emails)
+    if not result["ok"]:
+        raise HTTPException(400, result.get("error", "Failed"))
+    return result
+
+
+@app.get("/calendar/{draft_id}/confirm")
+async def confirm_calendar_event_get(draft_id: str):
+    '''
+    Browser-friendly confirm (GET request from Slack link).
+    Uses empty attendee_emails — human can add via the curl command.
+    '''
+    result = confirm_event(draft_id, [])
+    if not result["ok"]:
+        return {"error": result.get("error")}
+    return result
+"""
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _next_business_day_10am(from_dt: datetime) -> datetime:
+    """Returns next weekday at 10 AM from the given datetime."""
+    d = from_dt + timedelta(days=1)
+    while d.weekday() >= 5:  # 5=Saturday, 6=Sunday
+        d += timedelta(days=1)
+    return d.replace(hour=10, minute=0, second=0, microsecond=0)
+
+
+def _post_to_slack(text: str):
+    if not SLACK:
+        return
+    try:
+        requests.post(SLACK, json={"text": text}, timeout=5)
+    except Exception as e:
+        print(f"[Calendar] Slack post failed: {e}")
+
+
+        
