@@ -70,6 +70,7 @@ document.getElementById("startBtn").addEventListener("click", async () => {
     isCapturing = true;
     captureStartedAt = Date.now();
     updateUI();
+    document.getElementById("meeting-id-line").textContent = `meeting: ${result.meetingId || "?"}`;
     setStatus("Live! Meeting created — check Notion for the meeting page now.");
   } else {
     setStatus(`Failed to start${result?.error ? ": " + result.error : ""}. Check the Meet tab's console (F12) for [MDC] errors.`);
@@ -77,15 +78,19 @@ document.getElementById("startBtn").addEventListener("click", async () => {
 });
 
 document.getElementById("stopBtn").addEventListener("click", async () => {
-  setStatus("Saving to Notion...");
+  setStatus("Saving to Notion — stay on this call until this finishes...");
   const result = await sendToContent({ type: "STOP_CAPTURE" });
+  // Whether it succeeded or not, capture is over on the client side — don't
+  // leave the UI stuck showing the live view for a meeting that already
+  // stopped polling.
+  isCapturing = false;
+  captureStartedAt = null;
+  updateUI();
   if (result?.ok) {
-    isCapturing = false;
-    captureStartedAt = null;
-    updateUI();
     setStatus("Saved! Check Notion for the report.");
   } else {
-    setStatus("Stop may have failed — check the Meet tab's console (F12) for [MDC] errors.");
+    setStatus(`Save failed${result?.error ? ": " + result.error : ""}. ` +
+              `The meeting may be stuck without a summary — tell your admin the meeting ID so it can be finalized manually.`);
   }
 });
 

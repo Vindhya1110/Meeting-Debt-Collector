@@ -143,15 +143,54 @@ def setup_notion_workspace():
 
     print("[Notion] Workspace setup complete")
 
+def _find_existing_db(title: str) -> str:
+    """
+    Look for an already-created database with this exact title as a direct
+    child of the parent page. This is what makes setup idempotent: if the
+    local SQLite cache is ever lost or reset (crash, fresh clone, manual
+    reset during testing), startup reuses the existing database instead of
+    blindly creating a duplicate under the same parent page.
+    """
+    try:
+        cursor = None
+        for _ in range(10):  # up to ~1000 children, generous for this use case
+            params = {"page_size": 100}
+            if cursor:
+                params["start_cursor"] = cursor
+            r = requests.get(
+                f"https://api.notion.com/v1/blocks/{PARENT}/children",
+                headers=HEADERS, params=params, timeout=8
+            )
+            if r.status_code != 200:
+                return ""
+            data = r.json()
+            for block in data.get("results", []):
+                if block.get("type") == "child_database" and \
+                   block.get("child_database", {}).get("title") == title:
+                    return block["id"]
+            if not data.get("has_more"):
+                break
+            cursor = data.get("next_cursor")
+    except Exception as e:
+        print(f"[Notion] existing-db lookup failed (non-fatal): {e}")
+    return ""
+
 def _ensure_db(name: str, properties: dict):
     existing = _db(name)
     if existing:
-        print(f"[Notion] {name} DB already exists: {existing[:8]}...")
+        print(f"[Notion] {name} DB already exists (cached): {existing[:8]}...")
         return existing
+
+    title = f"MDC - {name.title()}"
+    found = _find_existing_db(title)
+    if found:
+        set_notion_id(f"notion_db_{name}", found)
+        print(f"[Notion] Found existing {name} database on Notion (cache was empty): {found[:8]}...")
+        return found
 
     result = _post("databases", {
         "parent": {"type": "page_id", "page_id": PARENT},
-        "title": [{"type": "text", "text": {"content": f"MDC - {name.title()}"}}],
+        "title": [{"type": "text", "text": {"content": title}}],
         "properties": properties
     })
     if result:

@@ -1,559 +1,235 @@
-INFO:     Started server process [13712]
+INFO:     Started server process [28612]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-[Notion] Created meetings database: 3aeaefbe...
-[Notion] Created commitments database: 3aeaefbe...
-[Notion] Created people database: 3aeaefbe...
-[Notion] Created agenda database: 3aeaefbe...
+[Notion] meetings DB already exists (cached): 3aeaefbe...
+[Notion] commitments DB already exists (cached): 3aeaefbe...
+[Notion] people DB already exists (cached): 3aeaefbe...
+[Notion] agenda DB already exists (cached): 3aeaefbe...
 [Notion] Workspace setup complete
 [Scheduler] Watch loop started - ticking every 10s
 [Agent] Running. Extension or dashboard can now connect.
-INFO:     127.0.0.1:60970 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55010 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57252 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57252 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58731 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59073 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58731 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61027 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61027 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET / HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57688 - "GET /app.js HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /commitments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59970 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59970 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57688 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50347 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58085 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50347 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62241 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52797 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62241 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET / HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:60276 - "GET /app.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59586 - "GET /meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /commitments HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60179 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55778 - "OPTIONS /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55778 - "POST /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56164 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62346 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50743 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50743 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50743 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55539 - "OPTIONS /meetings/5818a736-c499-40d2-91cb-80621348374e/chunk HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65318 - "POST /meetings/5818a736-c499-40d2-91cb-80621348374e/chunk HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
-    await super().__call__(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
-    await route.handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
-    await super().handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
-    return await _ingest(mid, req.chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
-    return await _ingest_locked(mid, chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
-    raw = extract(chunk, attendees, mid)
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
-    raw = call(
-        system=EXTRACTION_PROMPT.format(
-    ...<7 lines>...
-        provider="groq"
-    )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
-    return self._post(
-           ~~~~~~~~~~^
-        "/chat/completions",
-        ^^^^^^^^^^^^^^^^^^^^
-    ...<53 lines>...
-        stream_cls=Stream[ChatCompletionChunk],
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97926, Requested 18046. Please try again in 3h49m59.808s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:59582 - "POST /meetings/5818a736-c499-40d2-91cb-80621348374e/chunk HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
-    await super().__call__(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
-    await route.handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
-    await super().handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
-    return await _ingest(mid, req.chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
-    return await _ingest_locked(mid, chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
-    raw = extract(chunk, attendees, mid)
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
-    raw = call(
-        system=EXTRACTION_PROMPT.format(
-    ...<7 lines>...
-        provider="groq"
-    )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
-    return self._post(
-           ~~~~~~~~~~^
-        "/chat/completions",
-        ^^^^^^^^^^^^^^^^^^^^
-    ...<53 lines>...
-        stream_cls=Stream[ChatCompletionChunk],
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97894, Requested 4416. Please try again in 33m15.84s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:62812 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62812 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62812 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56909 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61082 - "POST /meetings/5818a736-c499-40d2-91cb-80621348374e/chunk HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
-    await super().__call__(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
-    await route.handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
-    await super().handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
-    return await _ingest(mid, req.chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
-    return await _ingest_locked(mid, chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
-    raw = extract(chunk, attendees, mid)
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
-    raw = call(
-        system=EXTRACTION_PROMPT.format(
-    ...<7 lines>...
-        provider="groq"
-    )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
-    return self._post(
-           ~~~~~~~~~~^
-        "/chat/completions",
-        ^^^^^^^^^^^^^^^^^^^^
-    ...<53 lines>...
-        stream_cls=Stream[ChatCompletionChunk],
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97825, Requested 2704. Please try again in 7m37.056s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:62353 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62353 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63813 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62353 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50060 - "POST /meetings/5818a736-c499-40d2-91cb-80621348374e/chunk HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
-    await super().__call__(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
-    await route.handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
-    await super().handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
-    return await _ingest(mid, req.chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
-    return await _ingest_locked(mid, chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
-    raw = extract(chunk, attendees, mid)
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
-    raw = call(
-        system=EXTRACTION_PROMPT.format(
-    ...<7 lines>...
-        provider="groq"
-    )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
-    return self._post(
-           ~~~~~~~~~~^
-        "/chat/completions",
-        ^^^^^^^^^^^^^^^^^^^^
-    ...<53 lines>...
-        stream_cls=Stream[ChatCompletionChunk],
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97790, Requested 14949. Please try again in 3h3m26.496s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:51481 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51481 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53588 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51698 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61152 - "GET /health HTTP/1.1" 200 OK
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[Resolver] used deterministic fallback for 55ab1ecc: "Wednesday evening" -> 2026-08-05T18:00:00
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 4352.69it/s]
+INFO:     127.0.0.1:63528 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63526 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60932 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60932 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60932 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57316 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62138 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62138 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62138 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65377 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59903 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62135 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63408 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62826 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53288 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58378 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50933 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58378 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55081 - "OPTIONS /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55081 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62216 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60949 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51196 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51196 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51196 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59646 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56184 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57701 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56147 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59988 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65104 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54356 - "OPTIONS /meetings/f0722222-2862-4010-ab90-708a9af520f9/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54356 - "POST /meetings/f0722222-2862-4010-ab90-708a9af520f9/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54356 - "POST /meetings/f0722222-2862-4010-ab90-708a9af520f9/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61894 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60906 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57135 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61756 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64475 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64385 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65356 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56083 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65356 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65356 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59085 - "OPTIONS /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59085 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64554 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58071 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64554 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59085 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56720 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61411 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58071 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56837 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50606 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56720 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50980 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54720 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57605 - "POST /meetings/a2a63a2e-e56d-4398-ab30-d117c8b7e65e/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55782 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49318 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52259 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53832 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52484 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61313 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53657 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51517 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50502 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62480 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "POST /meetings/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60384 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63539 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61260 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54032 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54032 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64295 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54032 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61260 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61260 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51172 - "OPTIONS /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98987, Requested 3745. Please try again in 39m20.448s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98984, Requested 3436. Please try again in 34m50.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+INFO:     127.0.0.1:51172 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50746 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60259 - "GET /health HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98953, Requested 1503. Please try again in 6m33.984s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98950, Requested 1220. Please try again in 2m26.88s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+INFO:     127.0.0.1:61550 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56285 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52074 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:49670 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51481 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49368 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49368 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49368 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57266 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61397 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61397 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55922 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61397 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64073 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64075 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59905 - "OPTIONS /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59269 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60190 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59269 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59269 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55663 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59371 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55663 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55663 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53651 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53651 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53651 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58873 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59162 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63621 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63621 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62421 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62447 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63086 - "OPTIONS /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63086 - "POST /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59940 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59102 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59940 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59940 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56028 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56379 - "OPTIONS /meetings/d2959634-96df-4517-9a29-5639afab0139/chunk HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49799 - "POST /meetings/d2959634-96df-4517-9a29-5639afab0139/chunk HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:49670 - "GET /health HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98918, Requested 1489. Please try again in 5m51.647999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98916, Requested 1214. Please try again in 1m52.32s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+INFO:     127.0.0.1:62030 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60358 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59009 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55142 - "GET /health HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98883, Requested 20342. Please try again in 4h36m50.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[Slack] -> 200
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 20063. Please try again in 4h45m17.568s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+INFO:     127.0.0.1:51603 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55142 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56955 - "GET /health HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99719, Requested 33066. Please try again in 7h52m6.239999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+INFO:     127.0.0.1:53007 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 500 Internal Server Error
 ERROR:    Exception in ASGI application
 Traceback (most recent call last):
   File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
@@ -626,8 +302,8 @@ Traceback (most recent call last):
     ...<7 lines>...
         provider="groq"
     )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
+  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 83, in call
+    resp = _featherless_client.chat.completions.create(**fallback_kwargs)
   File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
     return func(*args, **kwargs)
   File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
@@ -645,203 +321,43 @@ Traceback (most recent call last):
                            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
     raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97218, Requested 3659. Please try again in 12m37.728s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:53023 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49365 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49365 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49365 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54605 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62633 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56381 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52960 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56381 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56381 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62633 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59591 - "POST /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62633 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58131 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58131 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58138 - "OPTIONS /meetings/0b14fddf-9dbe-4428-ac1a-428265384e7b/chunk HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58138 - "POST /meetings/0b14fddf-9dbe-4428-ac1a-428265384e7b/chunk HTTP/1.1" 500 Internal Server Error
-ERROR:    Exception in ASGI application
-Traceback (most recent call last):
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 416, in run_asgi
-    result = await app(  # type: ignore[func-returns-value]
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self.scope, self.receive, self.send
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
-    return await self.app(scope, receive, send)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
-    await super().__call__(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 2734, in app
-    await route.handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 1281, in handle
-    await super().handle(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 158, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 144, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 706, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\fastapi\routing.py", line 352, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 133, in ingest_chunk
-    return await _ingest(mid, req.chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 142, in _ingest
-    return await _ingest_locked(mid, chunk)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\main.py", line 159, in _ingest_locked
-    raw = extract(chunk, attendees, mid)
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\extractor.py", line 17, in extract
-    raw = call(
-        system=EXTRACTION_PROMPT.format(
-    ...<7 lines>...
-        provider="groq"
-    )
-  File "E:\PROJECTS\Meeting_Debt_collector\agent\llm.py", line 71, in call
-    resp = client.chat.completions.create(**kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
-    return func(*args, **kwargs)
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1296, in create
-    return self._post(
-           ~~~~~~~~~~^
-        "/chat/completions",
-        ^^^^^^^^^^^^^^^^^^^^
-    ...<53 lines>...
-        stream_cls=Stream[ChatCompletionChunk],
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1360, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\PROJECTS\Meeting_Debt_collector\venv\Lib\site-packages\openai\_base_client.py", line 1133, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kysm5tzefmdaa9085geeqbme` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97079, Requested 3659. Please try again in 10m37.632s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
-INFO:     127.0.0.1:62280 - "POST /meetings/0b14fddf-9dbe-4428-ac1a-428265384e7b/end HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58131 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61130 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64020 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58293 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54151 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60046 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62300 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55276 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50668 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50357 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56063 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57784 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58294 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51272 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61971 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51272 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51272 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53832 - "POST /meetings/start HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58325 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49672 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50167 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57764 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57432 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57432 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57432 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51573 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57764 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61457 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52868 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61067 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61067 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61067 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50483 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50483 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50483 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49198 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /report/meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54639 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50167 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57627 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61163 - "GET /report/people HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54639 - "GET /report/meetings HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63730 - "GET / HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61163 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63730 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61163 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54639 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63730 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61163 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54639 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61163 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63730 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58902 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61355 - "GET /health HTTP/1.1" 200 OK
+openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 32768 tokens. However, you requested 3000 output tokens and your prompt contains at least 29769 input tokens, for a total of at least 32769 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=29769)", 'type': 'invalid_request_error', 'param': None, 'code': 'bad_request'}}
+INFO:     127.0.0.1:62813 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60479 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65095 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53018 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64186 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64712 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49869 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54969 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50747 - "GET /health HTTP/1.1" 200 OK
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99712, Requested 5110. Please try again in 1h9m26.207999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99700, Requested 2597. Please try again in 33m4.608s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[LLM] Groq call failed (Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kyw235xxft483k058ggv9fcd` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99677, Requested 5264. Please try again in 1h11m9.024s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); falling back to Featherless for this call.
+[Notion] patch pages/3aeaefbe-35a4-8121-9f02-d917973bfc45 -> 400: {"object":"error","status":400,"code":"validation_error","message":"Can't edit block that is archived. You must unarchive the block before editing.","request_id":"f4e9ca74-7a52-4264-b973-4989670280ff"}
+INFO:     127.0.0.1:53011 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/chunk HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50747 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53018 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64186 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65095 - "GET /health HTTP/1.1" 200 OK
+[Notion] patch pages/3aeaefbe-35a4-8121-9f02-d917973bfc45 -> 400: {"object":"error","status":400,"code":"validation_error","message":"Can't edit block that is archived. You must unarchive the block before editing.","request_id":"76c7830c-c179-4cd1-9920-e84a21099e03"}
+[Notion] patch blocks/3aeaefbe-35a4-8121-9f02-d917973bfc45/children -> 400: {"object":"error","status":400,"code":"validation_error","message":"Can't edit block that is archived. You must unarchive the block before editing.","request_id":"f6307ade-2e57-4972-942c-3e2bfbc98e50"}
+[Notion] patch blocks/3aeaefbe-35a4-8121-9f02-d917973bfc45/children -> 400: {"object":"error","status":400,"code":"validation_error","message":"Can't edit block that is archived. You must unarchive the block before editing.","request_id":"b05f68c4-57ba-4cba-811a-8449f437148a"}
+INFO:     127.0.0.1:63445 - "POST /meetings/6095cb22-f039-4b8d-9ce2-d39405e94a30/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58054 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53018 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54166 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58031 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56851 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62956 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62956 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62956 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51275 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52299 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52299 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52299 - "GET /health HTTP/1.1" 200 OK

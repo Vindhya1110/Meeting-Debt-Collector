@@ -96,13 +96,28 @@ MDC.stopCapture = async function () {
 
   await MDC.sendChunk();  // flush remaining buffer
 
-  if (MDC.state.meetingId) {
-    try {
-      await fetch(`${MDC.AGENT_URL}/meetings/${MDC.state.meetingId}/end`,
-        { method: "POST" });
-    } catch (e) {
-      console.error("[MDC] Finalize failed:", e);
+  if (!MDC.state.meetingId) {
+    chrome.runtime.sendMessage({ type: "CAPTURE_STOPPED" });
+    return { ok: false, error: "No active meeting ID — nothing to finalize." };
+  }
+
+  // IMPORTANT: this must complete BEFORE you leave the Meet call or close the
+  // tab — if the page navigates away mid-request, the fetch is killed and
+  // /end never reaches the server, leaving the meeting stuck as "active"
+  // with no MoM ever generated. Stay on the call until this resolves.
+  try {
+    const resp = await fetch(`${MDC.AGENT_URL}/meetings/${MDC.state.meetingId}/end`,
+      { method: "POST" });
+    if (!resp.ok) {
+      const body = await resp.text().catch(() => "");
+      console.error(`[MDC] Finalize failed: HTTP ${resp.status} ${body}`);
+      chrome.runtime.sendMessage({ type: "CAPTURE_STOPPED" });
+      return { ok: false, error: `Agent returned HTTP ${resp.status}` };
     }
+  } catch (e) {
+    console.error("[MDC] Finalize failed (network/interrupted):", e);
+    chrome.runtime.sendMessage({ type: "CAPTURE_STOPPED" });
+    return { ok: false, error: "Request failed or was interrupted (e.g. tab closed too soon): " + e.message };
   }
 
   chrome.runtime.sendMessage({ type: "CAPTURE_STOPPED" });
@@ -136,6 +151,18 @@ MDC.poll = function () {
       console.warn("[MDC] no caption selector matched anything. Are Meet's captions (CC) turned on? " +
                    "If yes, Meet's DOM has likely changed — inspect the caption text on screen and update content_meet.js's MDC_SELECTORS.caption list.");
     }
+  }
+
+  // Real captions are phrases, not single words. The generic aria-live
+  // fallback selectors can match unrelated UI (toasts, date/time widgets,
+  // etc.) that happens to share the same accessibility pattern — reject
+  // anything implausibly short rather than polluting the transcript with
+  // noise like a stray "July".
+  const MIN_CAPTION_LENGTH = 8;
+  if (text && text.length < MIN_CAPTION_LENGTH) {
+    console.warn(`[MDC] rejected short match from "${matchedSelector}": "${text}" ` +
+                 `(likely not real captions — probably matched the wrong element)`);
+    return;
   }
 
   if (!text || text === MDC.state.lastSeen) return;

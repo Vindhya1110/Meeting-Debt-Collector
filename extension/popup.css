@@ -54,3 +54,7 @@ button { width:100%; padding:9px; border:none; border-radius:6px;
   background:#fff4d6; color:#8a6116; border-radius:6px; padding:8px;
   font-size:11px; line-height:1.4; margin-bottom:8px;
 }
+.meeting-id-line {
+  font-size:10px; color:#999; margin-bottom:6px; font-family:monospace;
+  word-break:break-all;
+}

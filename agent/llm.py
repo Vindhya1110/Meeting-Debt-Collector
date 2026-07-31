@@ -68,8 +68,20 @@ def call(system: str, user: str, model: str = None,
     if expect_json:
         kwargs["response_format"] = {"type": "json_object"}
 
-    resp = client.chat.completions.create(**kwargs)
-    return resp.choices[0].message.content.strip()
+    try:
+        resp = client.chat.completions.create(**kwargs)
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        if provider != "groq":
+            raise  # already on the fallback provider, nothing left to try
+        # Groq's free tier has a daily token cap that's easy to hit during
+        # heavy testing. Rather than crash the whole request with a 500,
+        # fall back to Featherless once for this call.
+        print(f"[LLM] Groq call failed ({e}); falling back to Featherless for this call.")
+        fallback_kwargs = dict(kwargs)
+        fallback_kwargs["model"] = MODEL_MAIN
+        resp = _featherless_client.chat.completions.create(**fallback_kwargs)
+        return resp.choices[0].message.content.strip()
 
 
 def call_fast(system: str, user: str,
